@@ -52,6 +52,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 			Client::talkRepeat = reader.GetBoolean("optional", "talkRepeat", false);
 			Client::talkTime = reader.GetInteger("optional", "talkTime", 2000);
 			Client::zeroPointArrowFlag = reader.GetBoolean("optional", "zeroPointArrow", false);
+			Client::penetrationDamageReducedFlag = reader.GetBoolean("optional", "penetrationDamageReduced", false);
 		}
 
 		Hook_CreateMutexA(true); //multiclient //ty darter, angel, and alias!

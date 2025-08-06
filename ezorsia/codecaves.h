@@ -1638,3 +1638,12 @@ __declspec(naked) void skillToolTipNew()
 		jmp skillToolTipNewRtn
 	}
 }
+
+DWORD damageReducedRtn = 0x0075C009;
+__declspec(naked) void DamageReduced()
+{
+	__asm {
+		add esi, _Init_thread_epoch
+		jmp damageReducedRtn
+	}
+}

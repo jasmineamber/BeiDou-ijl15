@@ -24,6 +24,7 @@ bool Client::debug = false; // 调试模式
 bool Client::climbSpeedAuto = false; // 自动攀爬速度
 float Client::climbSpeed = 1.0; // 攀爬速度
 bool Client::zeroPointArrowFlag = false; // 近战不挥拳
+bool Client::penetrationDamageReducedFlag = false; // 穿透攻击伤害不衰减
 unsigned char Client::imeType = 1; // 输入法类型
 std::string Client::ServerIP_AddressFromINI = "127.0.0.1"; // 服务器IP地址
 int Client::serverIP_Port = 8484; // 服务器端口
@@ -912,6 +913,14 @@ void Client::ZeroPointArrow()
 	if (Client::zeroPointArrowFlag)
 	{
 		Memory::WriteMemory(0x009516C2, 2, 0x0F, 0x89);
+	}
+}
+
+void Client::PenetrationDamageReduced()
+{
+	if (Client::penetrationDamageReducedFlag)
+	{
+		Memory::CodeCave(DamageReduced, 0x0075C004, 5);
 	}
 }
 
