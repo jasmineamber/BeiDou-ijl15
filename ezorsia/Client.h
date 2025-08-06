@@ -14,6 +14,7 @@ public:
 	static void JumpCap();
 	static void FixChatPosHook();
 	static void NoPassword();
+	static void ZeroPointArrow();
 	static void MoreHook();
 	static void WorldMap();
 	static const int m_nIGCipherHash = 0XC65053F2;
@@ -42,4 +43,5 @@ public:
 	static int serverIP_Port;
 	static bool talkRepeat;
 	static int talkTime;
+	static bool zeroPointArrowFlag;
 };
